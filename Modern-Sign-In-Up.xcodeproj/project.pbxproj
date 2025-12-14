@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CDE2E1F02EED6F32004B8FF0 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE2E1EF2EED6F32004B8FF0 /* LoginView.swift */; };
+		CDE2E1F22EEE8A2D004B8FF0 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE2E1F12EEE8A2C004B8FF0 /* InputView.swift */; };
 		CDF71A2B2EEC2F89005A5730 /* Modern_Sign_In_UpApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF71A2A2EEC2F89005A5730 /* Modern_Sign_In_UpApp.swift */; };
 		CDF71A2D2EEC2F89005A5730 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF71A2C2EEC2F89005A5730 /* ContentView.swift */; };
 		CDF71A2F2EEC2F89005A5730 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF71A2E2EEC2F89005A5730 /* Item.swift */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CDE2E1EF2EED6F32004B8FF0 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		CDE2E1F12EEE8A2C004B8FF0 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
 		CDF71A272EEC2F89005A5730 /* Modern-Sign-In-Up.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Modern-Sign-In-Up.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDF71A2A2EEC2F89005A5730 /* Modern_Sign_In_UpApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modern_Sign_In_UpApp.swift; sourceTree = "<group>"; };
 		CDF71A2C2EEC2F89005A5730 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -34,6 +38,61 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CDE2E1E62EED6DF6004B8FF0 /* App */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		CDE2E1E92EED6E8D004B8FF0 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				CDE2E1F12EEE8A2C004B8FF0 /* InputView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		CDE2E1EA2EED6E96004B8FF0 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				CDF71A2C2EEC2F89005A5730 /* ContentView.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		CDE2E1EB2EED6EA2004B8FF0 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		CDE2E1EC2EED6EA9004B8FF0 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				CDE2E1EF2EED6F32004B8FF0 /* LoginView.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		CDE2E1ED2EED6EC1004B8FF0 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				CDE2E1EC2EED6EA9004B8FF0 /* Authentication */,
+				CDE2E1EA2EED6E96004B8FF0 /* Root */,
+				CDE2E1EB2EED6EA2004B8FF0 /* Profile */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		CDE2E1EE2EED6F07004B8FF0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		CDF71A1E2EEC2F89005A5730 = {
 			isa = PBXGroup;
 			children = (
@@ -53,8 +112,11 @@
 		CDF71A292EEC2F89005A5730 /* Modern-Sign-In-Up */ = {
 			isa = PBXGroup;
 			children = (
+				CDE2E1E62EED6DF6004B8FF0 /* App */,
+				CDE2E1E92EED6E8D004B8FF0 /* Components */,
+				CDE2E1ED2EED6EC1004B8FF0 /* Core */,
+				CDE2E1EE2EED6F07004B8FF0 /* Model */,
 				CDF71A2A2EEC2F89005A5730 /* Modern_Sign_In_UpApp.swift */,
-				CDF71A2C2EEC2F89005A5730 /* ContentView.swift */,
 				CDF71A2E2EEC2F89005A5730 /* Item.swift */,
 				CDF71A302EEC2F8D005A5730 /* Assets.xcassets */,
 				CDF71A322EEC2F8D005A5730 /* Preview Content */,
@@ -142,6 +204,8 @@
 			files = (
 				CDF71A2D2EEC2F89005A5730 /* ContentView.swift in Sources */,
 				CDF71A2F2EEC2F89005A5730 /* Item.swift in Sources */,
+				CDE2E1F22EEE8A2D004B8FF0 /* InputView.swift in Sources */,
+				CDE2E1F02EED6F32004B8FF0 /* LoginView.swift in Sources */,
 				CDF71A2B2EEC2F89005A5730 /* Modern_Sign_In_UpApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
