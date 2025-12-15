@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct InputView: View {
+struct ForumField: View {
     @Binding var text: String
     let title: String
     let placeholder: String
@@ -34,5 +34,5 @@ struct InputView: View {
 }
 
 #Preview {
-    InputView(text: .constant("") , title: "Email Adress", placeholder: "name@example.com")
+    ForumField(text: .constant("") , title: "Email Adress", placeholder: "name@example.com")
 }

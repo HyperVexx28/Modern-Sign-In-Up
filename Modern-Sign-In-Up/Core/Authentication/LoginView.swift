@@ -22,12 +22,12 @@ struct LoginView: View {
                 
                 //forum fields
                 VStack(spacing:24){
-                    InputView(text: $email,
+                    ForumField(text: $email,
                               title: "Email Address",
                               placeholder: "name@example.com")
                     .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
                     
-                    InputView(text: $password, title: "Password", placeholder: "Enter your password", isSecureField: true)
+                    ForumField(text: $password, title: "Password", placeholder: "Enter your password", isSecureField: true)
                 }
                 .padding(.horizontal)
                 .padding(.top, 12)
@@ -56,7 +56,8 @@ struct LoginView: View {
                 //sign up button
                 
                 NavigationLink {
-                    
+                    RegistrationView()
+                        .navigationBarBackButtonHidden()
                 } label: {
                     HStack(spacing:3 ){
                         Text("Dont have an account?")
