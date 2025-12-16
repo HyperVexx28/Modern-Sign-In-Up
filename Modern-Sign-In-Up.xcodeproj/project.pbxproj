@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		CD050BD72EF0A34600027BD5 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD050BD62EF0A34600027BD5 /* ProfileView.swift */; };
+		CD050BD92EF147E100027BD5 /* SettingsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD050BD82EF147E100027BD5 /* SettingsRow.swift */; };
+		CD050BDE2EF14B6B00027BD5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD050BDD2EF14B6B00027BD5 /* User.swift */; };
 		CDE2E1F02EED6F32004B8FF0 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE2E1EF2EED6F32004B8FF0 /* LoginView.swift */; };
 		CDE2E1F22EEE8A2D004B8FF0 /* ForumField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE2E1F12EEE8A2C004B8FF0 /* ForumField.swift */; };
 		CDE2E1F42EEEB4F9004B8FF0 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE2E1F32EEEB4F9004B8FF0 /* RegistrationView.swift */; };
@@ -20,6 +22,8 @@
 
 /* Begin PBXFileReference section */
 		CD050BD62EF0A34600027BD5 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		CD050BD82EF147E100027BD5 /* SettingsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRow.swift; sourceTree = "<group>"; };
+		CD050BDD2EF14B6B00027BD5 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CDE2E1EF2EED6F32004B8FF0 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		CDE2E1F12EEE8A2C004B8FF0 /* ForumField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForumField.swift; sourceTree = "<group>"; };
 		CDE2E1F32EEEB4F9004B8FF0 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
@@ -53,6 +57,7 @@
 			isa = PBXGroup;
 			children = (
 				CDE2E1F12EEE8A2C004B8FF0 /* ForumField.swift */,
+				CD050BD82EF147E100027BD5 /* SettingsRow.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -95,6 +100,7 @@
 		CDE2E1EE2EED6F07004B8FF0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CD050BDD2EF14B6B00027BD5 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -213,6 +219,8 @@
 				CDE2E1F22EEE8A2D004B8FF0 /* ForumField.swift in Sources */,
 				CDE2E1F42EEEB4F9004B8FF0 /* RegistrationView.swift in Sources */,
 				CDE2E1F02EED6F32004B8FF0 /* LoginView.swift in Sources */,
+				CD050BDE2EF14B6B00027BD5 /* User.swift in Sources */,
+				CD050BD92EF147E100027BD5 /* SettingsRow.swift in Sources */,
 				CD050BD72EF0A34600027BD5 /* ProfileView.swift in Sources */,
 				CDF71A2B2EEC2F89005A5730 /* Modern_Sign_In_UpApp.swift in Sources */,
 			);

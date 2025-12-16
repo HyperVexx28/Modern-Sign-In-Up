@@ -13,7 +13,7 @@ struct ProfileView: View {
             Section{
                 HStack{
                     //Profile image or initals for now
-                    Text("MJ")
+                    Text(User.MOCK_USER.initials)
                         .font(.title)
                         .fontWeight(.semibold)
                         .foregroundColor(.white)
@@ -22,14 +22,14 @@ struct ProfileView: View {
                         .clipShape(Circle())
                     
                     VStack(alignment: .leading, spacing: 4){
-                        Text("Michael Jordan")
+                        Text(User.MOCK_USER.fullName)
                             .fontWeight(.semibold)
                             .padding(.top, 4)
                             .font(.subheadline)
                         
-                        Text("test@gmail.com")
+                        Text(User.MOCK_USER.email)
                             .font(.footnote)
-                            .accentColor(.gray)
+                            .foregroundColor(.gray)
                         
                     }
                 }
@@ -38,9 +38,30 @@ struct ProfileView: View {
             
             Section("General"){
                 
+                HStack{
+                    SettingsRow(imageName: "gear", title: "Version", tintColor: Color(.systemGray))
+                    
+                    Spacer()
+                     
+                    Text("1.0.0")
+                        .font(.subheadline)
+                        .foregroundColor(.gray)
+                }
             }
             
             Section("Account"){
+                
+                Button{
+                    print("Sign user out")
+                } label: {
+                    SettingsRow(imageName: "arrow.left.circle.fill", title: "Sign Out", tintColor: .red)
+                }
+                
+                Button{
+                    print("Delete user out")
+                } label: {
+                    SettingsRow(imageName: "xmark.circle.fill", title: "Delete Account", tintColor: .red)
+                }
                 
             }
         }
