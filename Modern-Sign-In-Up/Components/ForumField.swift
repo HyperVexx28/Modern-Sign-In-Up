@@ -12,6 +12,8 @@ struct ForumField: View {
     let title: String
     let placeholder: String
     var isSecureField = false
+    //
+    //jh
     var body: some View {
         VStack(alignment:.leading, spacing: 12){
             Text(title)
