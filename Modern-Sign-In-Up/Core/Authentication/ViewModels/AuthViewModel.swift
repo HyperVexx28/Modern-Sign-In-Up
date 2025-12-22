@@ -23,7 +23,13 @@ class AuthViewModel: ObservableObject{
     }
     
     func signIn(withEmail email: String, password: String) async throws{
-        print("Sign in...")
+        do {
+            let result = try await Auth.auth().signIn(withEmail: email, password: password)
+            self.userSession = result.user
+            await fetchUser()
+        } catch {
+            print("DEBUG: Failed to log in with error \(error.localizedDescription)")
+        }
     }
     //Asyncrenous function that can potentially throw an error
     func createUser(withEmail email: String, password: String, fullName: String) async throws{
@@ -67,7 +73,6 @@ class AuthViewModel: ObservableObject{
         guard let snapshot = try? await Firestore.firestore().collection("users").document(uid).getDocument() else { return }
         self.currentUser  = try? snapshot.data(as:User.self)
         
-        print("DEBUG: Current user is \(self.currentUser)")
     }
     
 }
