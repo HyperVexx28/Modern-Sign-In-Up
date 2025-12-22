@@ -10,6 +10,10 @@ import Firebase
 import FirebaseAuth
 import FirebaseFirestore
 
+protocol AuthenticationFormProtocol {
+    var formIsValid: Bool {get}
+}
+
 @MainActor
 class AuthViewModel: ObservableObject{
     @Published var userSession: FirebaseAuth.User?
@@ -63,7 +67,7 @@ class AuthViewModel: ObservableObject{
     }
     
     func deleteAccount(){
-        print("Delete account...")
+        // need to complete
     }
     
     func fetchUser() async {
