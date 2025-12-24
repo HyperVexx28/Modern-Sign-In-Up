@@ -31,16 +31,16 @@ struct RegistrationView: View {
                           placeholder: "name@example.com")
                 .autocapitalization(.none)
                 
-                ForumField(text: $email,
+                ForumField(text: $fullName,
                           title: "Full Name",
                           placeholder: "Enter your full name")
                 
                 ForumField(text: $password, title: "Password", placeholder: "Enter your password", isSecureField: true)
                 
                 ZStack(alignment:.trailing){
-                    ForumField(text: $password, title: "Confirm Password", placeholder: "Re-enter your password", isSecureField: true)
+                    ForumField(text: $confirmPass, title: "Confirm Password", placeholder: "Re-enter your password", isSecureField: true)
                     
-                    if password.isEmpty && !confirmPass.isEmpty{
+                    if !password.isEmpty && !confirmPass.isEmpty{
                         if password == confirmPass{
                             Image(systemName: "checkmark.circle.fill")
                                 .imageScale(.large)
@@ -76,7 +76,7 @@ struct RegistrationView: View {
                 .frame(width: UIScreen.main.bounds.width - 32,height: 48)
             }
             .background(Color(.systemBlue))
-            .disabled(formIsValid)
+            .disabled(!formIsValid)
             .opacity(formIsValid ? 1.0: 0.5)
             .cornerRadius(10)
             .padding(.top, 24)
@@ -104,9 +104,9 @@ extension RegistrationView : AuthenticationFormProtocol {
         return !email.isEmpty
         && email.contains("@")
         && !password.isEmpty
-        && password.count >= 6
+        && password.count > 5
+        && !fullName.isEmpty
         && confirmPass == password
-        && fullName.isEmpty
     }
 }
 #Preview {

@@ -66,8 +66,29 @@ class AuthViewModel: ObservableObject{
         }
     }
     
-    func deleteAccount(){
-        // need to complete
+    func deleteAccount(password: String) async throws {
+        guard let user = Auth.auth().currentUser else { return }
+        let email = user.email ?? ""
+        
+        do {
+            // 1. Re-authenticate (Required for sensitive operations like deletion)
+            let credential = EmailAuthProvider.credential(withEmail: email, password: password)
+            try await user.reauthenticate(with: credential)
+            
+            // 2. Delete user data from Firestore
+            try await Firestore.firestore().collection("users").document(user.uid).delete()
+            
+            // 3. Delete the account from Firebase Auth
+            try await user.delete()
+            
+            // 4. Update UI State
+            self.userSession = nil
+            self.currentUser = nil
+            
+        } catch {
+            print("DEBUG: Failed to delete account with error \(error.localizedDescription)")
+            throw error
+        }
     }
     
     func fetchUser() async {
