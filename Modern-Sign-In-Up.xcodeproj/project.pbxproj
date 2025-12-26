@@ -11,6 +11,7 @@
 		CD050BD92EF147E100027BD5 /* SettingsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD050BD82EF147E100027BD5 /* SettingsRow.swift */; };
 		CD050BDE2EF14B6B00027BD5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD050BDD2EF14B6B00027BD5 /* User.swift */; };
 		CD050BE02EF1596400027BD5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CD050BDF2EF1596400027BD5 /* GoogleService-Info.plist */; };
+		CD5CAA762EFD9F9600430A29 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5CAA752EFD9F9600430A29 /* LoadingView.swift */; };
 		CDD7D31E2EF2C279002FCC80 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD7D31D2EF2C267002FCC80 /* AuthViewModel.swift */; };
 		CDD7D3212EF40998002FCC80 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = CDD7D3202EF40998002FCC80 /* FirebaseAuth */; };
 		CDD7D3232EF40998002FCC80 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = CDD7D3222EF40998002FCC80 /* FirebaseFirestore */; };
@@ -30,6 +31,7 @@
 		CD050BD82EF147E100027BD5 /* SettingsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRow.swift; sourceTree = "<group>"; };
 		CD050BDD2EF14B6B00027BD5 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CD050BDF2EF1596400027BD5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		CD5CAA752EFD9F9600430A29 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		CDD7D31D2EF2C267002FCC80 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		CDE2E1EF2EED6F32004B8FF0 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		CDE2E1F12EEE8A2C004B8FF0 /* ForumField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForumField.swift; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 			children = (
 				CDE2E1F12EEE8A2C004B8FF0 /* ForumField.swift */,
 				CD050BD82EF147E100027BD5 /* SettingsRow.swift */,
+				CD5CAA752EFD9F9600430A29 /* LoadingView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -249,6 +252,7 @@
 				CDD7D31E2EF2C279002FCC80 /* AuthViewModel.swift in Sources */,
 				CDF71A2D2EEC2F89005A5730 /* ContentView.swift in Sources */,
 				CDF71A2F2EEC2F89005A5730 /* Item.swift in Sources */,
+				CD5CAA762EFD9F9600430A29 /* LoadingView.swift in Sources */,
 				CDE2E1F22EEE8A2D004B8FF0 /* ForumField.swift in Sources */,
 				CDE2E1F42EEEB4F9004B8FF0 /* RegistrationView.swift in Sources */,
 				CDE2E1F02EED6F32004B8FF0 /* LoginView.swift in Sources */,

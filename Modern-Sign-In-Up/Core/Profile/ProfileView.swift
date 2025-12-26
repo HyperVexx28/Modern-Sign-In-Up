@@ -3,12 +3,10 @@ import SwiftUI
 struct ProfileView: View {
     @EnvironmentObject var viewModel: AuthViewModel
     
-    // UI State
     @State private var showDeleteAlert = false
     @State private var showErrorAlert = false
     @State private var password = ""
     @State private var errorMessage = ""
-    @State private var isDeleting = false // New: Loading state tracker
 
     var body: some View {
         ZStack {
@@ -27,9 +25,7 @@ struct ProfileView: View {
                             VStack(alignment: .leading, spacing: 4) {
                                 Text(user.fullName)
                                     .fontWeight(.semibold)
-                                    .padding(.top, 4)
                                     .font(.subheadline)
-                                
                                 Text(user.email)
                                     .font(.footnote)
                                     .foregroundColor(.gray)
@@ -41,9 +37,7 @@ struct ProfileView: View {
                         HStack {
                             SettingsRow(imageName: "gear", title: "Version", tintColor: Color(.systemGray))
                             Spacer()
-                            Text("1.0.0")
-                                .font(.subheadline)
-                                .foregroundColor(.gray)
+                            Text("1.0.0").foregroundColor(.gray)
                         }
                     }
                     
@@ -59,56 +53,39 @@ struct ProfileView: View {
                         } label: {
                             SettingsRow(imageName: "xmark.circle.fill", title: "Delete Account", tintColor: .red)
                         }
-                        .disabled(isDeleting) // Prevent clicks while deleting
                     }
                 }
+                .disabled(viewModel.isLoading) // Disable list while loading
                 .alert("Delete Account", isPresented: $showDeleteAlert) {
                     SecureField("Enter password to confirm", text: $password)
-                    
                     Button("Delete", role: .destructive) {
                         Task {
-                            await handleDeleteAccount()
+                            do {
+                                try await viewModel.deleteAccount(password: password)
+                            } catch {
+                                self.errorMessage = error.localizedDescription
+                                self.showErrorAlert = true
+                            }
+                            password = ""
                         }
                     }
                     Button("Cancel", role: .cancel) { password = "" }
                 } message: {
-                    Text("This action is irreversible. Please enter your password to confirm.")
+                    Text("This is permanent. Enter your password to delete your data.")
                 }
-                .alert("Action Failed", isPresented: $showErrorAlert) {
-                    Button("OK", role: .cancel) { }
+                .alert("Error", isPresented: $showErrorAlert) {
+                    Button("OK", role: .cancel) {}
                 } message: {
                     Text(errorMessage)
                 }
             }
 
-            // MARK: - Loading Overlay
-            if isDeleting {
-                ZStack {
-                    Color.black.opacity(0.25)
-                        .ignoresSafeArea()
-                    
-                    ProgressView("Deleting Account...")
-                        .padding()
-                        .background(Color(.systemBackground))
-                        .cornerRadius(10)
-                        .shadow(radius: 10)
-                }
+            // Show the component when ViewModel is busy
+            if viewModel.isLoading {
+                LoadingView(message: viewModel.loadingMessage)
             }
         }
     }
-    
-    // Helper function to handle the logic
-    private func handleDeleteAccount() async {
-        isDeleting = true
-        do {
-            try await viewModel.deleteAccount(password: password)
-            // If successful, the viewModel updates currentUser to nil
-            // and the UI will naturally transition away.
-        } catch {
-            self.errorMessage = error.localizedDescription
-            self.showErrorAlert = true
-        }
-        isDeleting = false
-        password = ""
-    }
 }
+
+
