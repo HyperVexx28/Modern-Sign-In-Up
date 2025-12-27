@@ -32,7 +32,7 @@ struct LoginView: View {
                 .padding(.horizontal)
                 .padding(.top, 12)
                 
-                //sign in button
+                //sign in button (couldve made it into a component but i only use it a few times
                 
                 Button {
                     Task {
