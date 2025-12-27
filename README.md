@@ -9,17 +9,16 @@ It’s designed to be dropped into any new project so you can focus on building 
 
 Most “how-to” guides leave you with a half-baked login screen. This template is meant to be a solid starting point that actually feels like a real app. It handles:
 
-- **User Sync** – Maps Firebase Auth users directly to a Firestore `users` collection  
-- **Smart Loading** – A global `LoadingView` that clearly communicates what’s happening (e.g. “Signing in…” vs “Deleting account…”)  
-- **Safe Deletion** – A proper re-authentication flow so users can’t accidentally delete their account  
+- Firebase Auth synced cleanly to Firestore  
+- Clear, global loading states that explain what’s happening  
+- Safe account deletion with re-authentication  
 
+Built with **modern SwiftUI best practices**:
+- MVVM architecture  
+- Async/await concurrency  
+- State-driven UI  
+- Reusable, composable components  
 
-## 🛠 What’s Under the Hood?
-
-- **MVVM Architecture** – Business logic lives in ViewModels, keeping Views clean and readable  
-- **Async / Await** – Built with modern Swift concurrency (no messy completion handlers)  
-- **State-Driven UI** – The app reacts automatically when users sign in or out  
-- **Reusable Components** – Modular SwiftUI inputs and rows you can reuse anywhere  
 
 
 ## 🚀 Quick Setup
