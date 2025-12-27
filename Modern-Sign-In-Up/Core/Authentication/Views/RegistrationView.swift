@@ -1,18 +1,16 @@
-//
-//  RegistrationView.swift
-//  Modern-Sign-In-Up
-//
-//  Created by Mohamad Shehab on 14/12/2025.
-//
+// Registration screen capturing user credentials and creating Firebase accounts via AuthViewModel.
+// MVVM "View" layer responsible for user input and basic validation before hitting backend services.
 
 import SwiftUI
 
+/// Presents the sign-up form, validates inputs, and triggers account creation.
 struct RegistrationView: View {
     @State private var email = ""
     @State private var fullName = ""
     @State private var password = ""
     @State private var confirmPass = ""
     @Environment(\.dismiss) var dismiss
+    // Shared auth view model handles Firebase writes and session updates.
     @EnvironmentObject var viewModel: AuthViewModel
     
     
@@ -64,6 +62,7 @@ struct RegistrationView: View {
             
             Button {
                 Task{
+                    // Async boundary to create a user and store profile data.
                     try await viewModel.createUser(withEmail: email, password: password, fullName: fullName)
                 }
             } label: {
@@ -98,7 +97,7 @@ struct RegistrationView: View {
         }
     }
 }
-//form validation
+// Form validation contract for registration inputs.
 extension RegistrationView : AuthenticationFormProtocol {
     var formIsValid: Bool {
         return !email.isEmpty

@@ -1,12 +1,9 @@
-//
-//  SettingsRow.swift
-//  Modern-Sign-In-Up
-//
-//  Created by Mohamad Shehab on 16/12/2025.
-//
+// Display row used in settings-style lists for navigation or actions.
+// Component layer to standardize icon + label presentation across sections.
 
 import SwiftUI
 
+/// A row with an icon and label used in lists of settings or account actions.
 struct SettingsRow: View {
     let imageName: String
     let title: String

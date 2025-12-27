@@ -1,15 +1,12 @@
-//
-//  LoadingView.swift
-//  Modern-Sign-In-Up
-//
-//  Created by Mohamad Shehab on 25/12/2025.
-//
+// Full-screen loading overlay that blocks interactions while work is in progress.
+// Shared component to provide consistent progress feedback across flows.
 
 import SwiftUI
 
 import SwiftUI
 
 
+/// Presents a modal-style loading indicator with a custom message.
 struct LoadingView: View {
     let message: String
     

@@ -1,15 +1,13 @@
-//
-//  LoginView.swift
-//  Modern-Sign-In-Up
-//
-//  Created by Mohamad Shehab on 13/12/2025.
-//
+// Sign-in screen for existing users, validating credentials and triggering AuthViewModel login.
+// MVVM "View" layer that binds form state to authentication logic via environment object.
 
 import SwiftUI
 
+/// Presents the sign-in form and routes to registration when needed.
 struct LoginView: View {
     @State private var email = ""
     @State private var password = ""
+    // Consumes shared auth view model to initiate sign-in and observe loading state if needed.
     @EnvironmentObject var viewModel: AuthViewModel
     
     var body: some View {
@@ -38,6 +36,7 @@ struct LoginView: View {
                 
                 Button {
                     Task {
+                       // Async boundary to execute Firebase-backed sign-in.
                        try await viewModel.signIn(withEmail: email, password: password)
                     }
                 } label: {
@@ -78,7 +77,7 @@ struct LoginView: View {
         }
     }
 }
-//form validation
+// Form validation contract for login inputs.
 extension LoginView: AuthenticationFormProtocol {
     var formIsValid: Bool {
         return !email.isEmpty

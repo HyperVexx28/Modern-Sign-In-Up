@@ -1,17 +1,15 @@
-//
-//  User.swift
-//  Modern-Sign-In-Up
-//
-//  Created by Mohamad Shehab on 16/12/2025.
-//
+// User domain model used across authentication and profile flows.
+// Lives in the shared model layer for decoding/encoding with Firestore.
 
 import Foundation
 
+/// Represents a user account persisted in Firebase Auth and mirrored in Firestore.
 struct User: Identifiable, Codable{
     let id: String
     let fullName: String
     let email: String
     
+    /// Abbreviated initials derived from the user's full name for avatar placeholders.
     var initials: String{
         let formatter = PersonNameComponentsFormatter()
         if let components = formatter.personNameComponents(from: fullName){
@@ -22,7 +20,7 @@ struct User: Identifiable, Codable{
     }
     
     }
+/// Convenience static for previews and tests.
 extension User{
     static var MOCK_USER = User(id: NSUUID().uuidString, fullName: "Kobe Bryant", email: "test@gmail.com")
 }
-

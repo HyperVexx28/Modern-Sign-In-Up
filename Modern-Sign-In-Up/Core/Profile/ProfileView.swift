@@ -1,6 +1,10 @@
+// Authenticated profile surface showing account metadata and account management actions.
+// SwiftUI view in the MVVM "View" layer consuming AuthViewModel for state and side effects.
 import SwiftUI
 
+/// Displays the signed-in user's information and exposes sign-out and account deletion actions.
 struct ProfileView: View {
+    // Shared auth state drives displayed user info and actions.
     @EnvironmentObject var viewModel: AuthViewModel
     
     @State private var showDeleteAlert = false
@@ -55,10 +59,12 @@ struct ProfileView: View {
                         }
                     }
                 }
-                .disabled(viewModel.isLoading) // Disable list while loading
+                // Block interactions while auth operations are in-flight to avoid duplicate requests.
+                .disabled(viewModel.isLoading)
                 .alert("Delete Account", isPresented: $showDeleteAlert) {
                     SecureField("Enter password to confirm", text: $password)
                     Button("Delete", role: .destructive) {
+                        // Async boundary to re-authenticate and delete the account from Firebase/Firestore.
                         Task {
                             do {
                                 try await viewModel.deleteAccount(password: password)
@@ -80,12 +86,10 @@ struct ProfileView: View {
                 }
             }
 
-            // Show the component when ViewModel is busy
+            // Present a loading overlay when backend work is occurring to keep UX responsive.
             if viewModel.isLoading {
                 LoadingView(message: viewModel.loadingMessage)
             }
         }
     }
 }
-
-

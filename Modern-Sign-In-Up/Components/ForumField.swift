@@ -1,19 +1,15 @@
-//
-//  InputView.swift
-//  Modern-Sign-In-Up
-//
-//  Created by Mohamad Shehab on 14/12/2025.
-//
+// Reusable text/secure input field with label styling for auth-related forms.
+// Lives in the shared UI components layer to keep views concise and consistent.
 
 import SwiftUI
 
+/// Labeled text field supporting secure entry for authentication forms.
 struct ForumField: View {
     @Binding var text: String
     let title: String
     let placeholder: String
     var isSecureField = false
-    //
-    //jh
+    // Toggle to render secure entry when true.
     var body: some View {
         VStack(alignment:.leading, spacing: 12){
             Text(title)
