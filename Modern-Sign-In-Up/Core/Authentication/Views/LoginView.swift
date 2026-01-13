@@ -78,6 +78,7 @@ struct LoginView: View {
     }
 }
 // Form validation contract for login inputs.
+// Can add more form validation if needed
 extension LoginView: AuthenticationFormProtocol {
     var formIsValid: Bool {
         return !email.isEmpty
