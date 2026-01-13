@@ -98,6 +98,7 @@ struct RegistrationView: View {
     }
 }
 // Form validation contract for registration inputs.
+// Can add more form validation if needed
 extension RegistrationView : AuthenticationFormProtocol {
     var formIsValid: Bool {
         return !email.isEmpty
