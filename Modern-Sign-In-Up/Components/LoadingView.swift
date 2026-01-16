@@ -1,4 +1,4 @@
-// Full-screen loading overlay that blocks interactions while work is in progress.
+// Full-screen loading overlay that blocks interactions while work is in progress..
 // Shared component to provide consistent progress feedback across flows.
 
 import SwiftUI
