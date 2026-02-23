@@ -9,7 +9,7 @@ struct ForumField: View {
     let title: String
     let placeholder: String
     var isSecureField = false
-    // Toggle to render secure entry when true.
+    // Toggle to render in secure entry when true.
     var body: some View {
         VStack(alignment:.leading, spacing: 12){
             Text(title)
